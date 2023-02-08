@@ -20,7 +20,7 @@ To configure the integration with Fingerprint:
 7. Return to your Fingerprint Dashboard, click on "Fingerprint Pro" in the left hand menu and verify a visitorId and RequestId is being returned
 8. In your application, find where the Auth0 Login is being called. In this example, I created a wrapped for the Auth0 Login method to pass in the Fingerprint visitorId and the requestId.
 
-async function loginWithFingerprint() {
+```async function loginWithFingerprint() {
 if (data) {
 return loginWithRedirect({
 fingerprint: `${data.visitorId} ${data.requestId}`,
@@ -28,6 +28,7 @@ fingerprint: `${data.visitorId} ${data.requestId}`,
 }
 return console.log(data);
 }
+```
 
 This is languange dependent and your implementation may look different than this. Ultimately, all you're doing is passing in the visitorId as well as the requestId into Auth0's /authorize URL. Relevant snippets from a React example will be included at the bottom of this guide.
 
@@ -38,19 +39,17 @@ It's important to note that this is only recommended for use with the New Univer
 
 The default behavior of this integration is to prompt users who are not already enrolled in an MFA factor to enroll; withthe MFA Type set to 'any' (Any Factors you have enabled in your Auth0 Dashboard)
 
-Subdomain Setup:
+#### Subdomain Setup:
+
 While the Fingerprint Subdomain integration is not required, we highly recommend configuring this. It increases accuracy by allowing Fingerprint to use first-party cookies and protects from identification requests being blocked by browsers or ad blockers
 https://dev.fingerprint.com/docs/subdomain-integration
 If more than 1 subdomain needed, setup all of the subdomains together and then add the A records for all domains in your DNS
 
-Subdomain setup:
-Increases accuracy by allowing FingerprintJS to use first-party cookies and protects from identification requests being blocked by browsers or ad blockers
-https://dev.fingerprint.com/docs/subdomain-integration
-If more than 1 subdomain needed, setup all of the subdomains together and then add the A records for all domains in your DNS
-Webhooks(optional) - Webhooks allow push from our servers to your servers. Create an endpoint that accepts data in this format: https://dev.fingerprint.com/docs/webhooks#identification-webhook-object-format
+#### React SPA Snippet examples:
 
-React SPA Snippet examples:
-//Index.js
+##### //Index.js
+
+```
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
@@ -78,7 +77,11 @@ loadOptions={{
 </FpjsProvider>
 </React.StrictMode>
 
-//NavBar.js
+```
+
+##### //NavBar.js
+
+```
 import { useAuth0 } from "@auth0/auth0-react";
 import { useVisitorData } from "@fingerprintjs/fingerprintjs-pro-react";
 
@@ -103,6 +106,7 @@ const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
    <AccountCircleOutlinedIcon />
        SIGN IN
    </Button>
+```
 
 ## Add the Auth0 Action
 
