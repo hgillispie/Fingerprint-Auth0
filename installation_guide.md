@@ -11,7 +11,7 @@ The integration is powered by Fingerprint Pro's device detection technology, whi
 
 To configure the integration with Fingerprint:
 
-1. Create your Fingeprint Pro Account and Log into the dashboard
+1. Create your Fingerprint Pro Account and Log into the dashboard
 2. Login to the Fingerprint dashboard https://dashboard.fingerprint.com/login
 3. Make sure the correct region is selected during account setup https://dev.fingerprintjs.com/docs/regions
 4. Click on “API keys” on the left pane to get your Public and Private keys. The public key will be used in the configuration of your client side application.
