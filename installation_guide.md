@@ -1,6 +1,6 @@
-The Fingerprint and Auth0 integration is designed to provide a secure and frictionless user experience. If a user logs in from a new device, the integration triggers Multi-Factor Authentication (MFA) for added security. As a result, users can login seamlessly from known devices they use regularly.
+The Fingerprint and Okta Cloud Identity Connection (CIC) Auth0 (fka as Auth0) integration is designed to provide a secure and frictionless user experience. If a user logs in from a new device, the integration triggers Multi-Factor Authentication (MFA) for added security. Likewise, if a user logs in from a known device, MFA will be bypassed to enable a frictionless user experience.
 
-The integration is powered by Fingerprint's device detection technology, which is an industry-leading solution that quickly and accurately identifies the characteristics of a browser or device. This information is then used to create a unique and immutable device fingerprint that can be used to securely identify a user's device and detect any malicious activity.
+The integration is powered by Fingerprint Pro's device detection technology, which is an industry-leading solution that quickly and accurately identifies the characteristics of a browser or device. The device information, with unparalleled accuracy, is then used to create a unique and immutable device fingerprint that can be used to securely identify a user's device and detect any malicious activity.
 
 ## Prerequisites
 
