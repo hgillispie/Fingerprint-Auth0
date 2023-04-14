@@ -119,7 +119,7 @@ const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
 ## Results
 
-Upon a user's login, this Action adds the user's device ID to an array in the app_metadata. Each time a user logs in from a new device, they will be prompted to provide a second factor authentication. On successful authentication, the device ID is added to the array of known devices and a count attribute is added to their app_metadata to annotate the number of consecutive logins from that device.
+Upon a user's login, this Action adds the user's device ID to an array in the app_metadata. Each time a user logs in from a new device, they will be prompted to provide a second factor authentication. On successful authentication, the device ID is added to the array of known devices.
 
 ## Troubleshooting
 
