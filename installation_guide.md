@@ -32,8 +32,6 @@ return console.log(data);
 
 This is languange dependent and your implementation may look different than this. Ultimately, all you're doing is passing in the visitorId as well as the requestId into Auth0's /authorize URL. Relevant snippets from a React example will be included at the bottom of this guide.
 
-9. After this is configured, return to your Fingerprint Dashboard and retrieve your Secret API key. This is what you'll use for the API-KEY value in the Auth0 Marketplace Integration.
-
 Additional Considerations:
 It's important to note that this is only recommended for use with the New Universal Login Experience as it's server-side rendered. Using this integration with Classic UL will result in the additonal parameters being visible to the end user.
 
@@ -114,8 +112,6 @@ const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
 1. Select **Add Integration** (at the top of this page).
 1. Read the necessary access requirements, and select **Continue**.
-1. Configure the integration using the following fields:
-   - **API Key** - The Private API key used to call the Fingerprint Pro Server API
 1. Add the integration to your Library by selecting **Create**.
 1. In the modal that appears, select the **Add to flow** link.
 1. Drag the Action into the desired location in the flow.
