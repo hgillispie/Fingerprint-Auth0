@@ -40,9 +40,9 @@ It's important to note that this is only recommended for use with the New Univer
 
 #### Subdomain Setup:
 
-While the Fingerprint Subdomain integration is not required, we highly recommend configuring this. It increases accuracy by allowing Fingerprint to use first-party cookies and protects from identification requests being blocked by browsers or ad blockers
+While the Fingerprint Subdomain integration is not required, we highly recommend configuring this. It increases accuracy by allowing Fingerprint to use first-party cookies and protects from identification requests being blocked by browsers or ad blockers.
 https://dev.fingerprint.com/docs/subdomain-integration
-If more than 1 subdomain needed, setup all of the subdomains together and then add the A records for all domains in your DNS
+If more than 1 subdomain is needed, setup all of the subdomains together and then add the A records for all domains in your DNS.
 
 #### React SPA Snippet examples:
 
