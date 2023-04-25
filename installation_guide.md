@@ -18,7 +18,7 @@ To configure the integration with Fingerprint:
 5. Follow the quickstart guide here https://dev.fingerprint.com/docs/quick-start-guide Fingerprint offers multiple SDKs for mobile and web applications, choose the most suitable for your application. If you have issues, please contact https://fingerprint.com/support/
 6. After integration, redeploy and visit your application
 7. Return to your Fingerprint Dashboard, click on "Fingerprint Pro" in the left hand menu and verify a visitorId and RequestId is being returned
-8. In your application, find where the Auth0 Login is being called. In this example, we created a wrapped for the Auth0 Login method to pass in the Fingerprint visitorId and the requestId.
+8. In your application, find where the Auth0 Login is being called. In this example, we created a wrapper for the Auth0 Login method to pass in the Fingerprint visitorId and the requestId.
 
 ```async function loginWithFingerprint() {
 if (data) {
