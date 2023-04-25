@@ -30,7 +30,7 @@ return console.log(data);
 }
 ```
 
-This is languange dependent and your implementation may look different than this. Ultimately, all you're doing is passing in the visitorId as well as the requestId into Auth0's /authorize URL. Relevant snippets from a React example will be included at the bottom of this guide.
+This is languange dependent and your implementation may look different than this. Ultimately, you are passing in the visitorId as well as the requestId into Auth0's /authorize URL. Relevant snippets from a React example will be included at the bottom of this guide.
 
 9. The visitorId and requestId can now be accessed within a post-login Action using ```event.request.query.fingerprint```. Note: you will need to split the string to use the values independently. 
 
