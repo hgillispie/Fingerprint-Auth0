@@ -18,7 +18,7 @@ To configure the integration with Fingerprint:
 5. Follow the quickstart guide here https://dev.fingerprint.com/docs/quick-start-guide Fingerprint offers multiple SDKs for mobile and web applications, choose the most suitable for your application. If you have issues, please contact https://fingerprint.com/support/
 6. After integration, redeploy and visit your application
 7. Return to your Fingerprint Dashboard, click on "Fingerprint Pro" in the left hand menu and verify a visitorId and RequestId is being returned
-8. In your application, find where the Auth0 Login is being called. In this example, I created a wrapped for the Auth0 Login method to pass in the Fingerprint visitorId and the requestId.
+8. In your application, find where the Auth0 Login is being called. In this example, we created a wrapped for the Auth0 Login method to pass in the Fingerprint visitorId and the requestId.
 
 ```async function loginWithFingerprint() {
 if (data) {
@@ -32,10 +32,11 @@ return console.log(data);
 
 This is languange dependent and your implementation may look different than this. Ultimately, all you're doing is passing in the visitorId as well as the requestId into Auth0's /authorize URL. Relevant snippets from a React example will be included at the bottom of this guide.
 
+9. The visitorId and requestId can now be accessed within a post-login Action using ```event.request.query.fingerprint```. Note: you will need to split the string to use the values independently. 
+
 Additional Considerations:
 It's important to note that this is only recommended for use with the New Universal Login Experience as it's server-side rendered. Using this integration with Classic UL will result in the additonal parameters being visible to the end user.
 
-The default behavior of this integration is to prompt users who are not already enrolled in an MFA factor to enroll; withthe MFA Type set to 'any' (Any Factors you have enabled in your Auth0 Dashboard)
 
 #### Subdomain Setup:
 
@@ -106,20 +107,7 @@ const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
    </Button>
 ```
 
-## Add the Auth0 Action
 
-**Note:** Once the Action is successfully deployed, all logins for your tenant will be processed by this integration. Before activating the integration in production, [install and verify this Action on a test tenant](https://auth0.com/docs/get-started/auth0-overview/create-tenants/set-up-multiple-environments).
-
-1. Select **Add Integration** (at the top of this page).
-1. Read the necessary access requirements, and select **Continue**.
-1. Add the integration to your Library by selecting **Create**.
-1. In the modal that appears, select the **Add to flow** link.
-1. Drag the Action into the desired location in the flow.
-1. Select **Apply Changes**.
-
-## Results
-
-Upon a user's login, this Action adds the user's device ID to an array in the app_metadata. Each time a user logs in from a new device, they will be prompted to provide a second factor authentication. On successful authentication, the device ID is added to the array of known devices.
 
 ## Troubleshooting
 
