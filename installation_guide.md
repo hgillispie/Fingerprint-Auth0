@@ -16,8 +16,8 @@ To configure the integration with Fingerprint:
 3. Make sure the correct region is selected during account setup https://dev.fingerprintjs.com/docs/regions
 4. Click on “API keys” on the left pane to get your Public and Private keys. The public key will be used in the configuration of your client side application.
 5. Follow the quickstart guide here https://dev.fingerprint.com/docs/quick-start-guide Fingerprint offers multiple SDKs for mobile and web applications, choose the most suitable for your application. If you have issues, please contact https://fingerprint.com/support/
-6. After integration, redeploy and visit your application
-7. Return to your Fingerprint Dashboard, click on "Fingerprint Pro" in the left hand menu and verify a visitorId and RequestId is being returned
+6. After integration, redeploy and visit your application.
+7. Return to your Fingerprint Dashboard, click on "Fingerprint Pro" in the left hand menu and verify a visitorId and RequestId is being returned.
 8. In your application, find where the Auth0 Login is being called. In this example, we created a wrapper for the Auth0 Login method to pass in the Fingerprint visitorId and the requestId.
 
 ```async function loginWithFingerprint() {
